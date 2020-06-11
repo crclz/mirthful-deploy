@@ -1,0 +1,21 @@
+version: '3.4'
+services:
+  mirthful:
+    image: registry.cn-beijing.aliyuncs.com/crucialize/mirthful:latest
+    environment: 
+      - PostgresPassword=P4fyWG3LG8PLC9QH5cpArKuu
+      - PG_HOST=a-postgres
+      - PostgresHost=a-postgres
+      - BLOB_STORE=/var/blob-store
+    networks: 
+      - mynet
+    # ports:
+    #   - 8082:80
+    volumes:
+      - /var/blob-store:/var/blob-store
+    container_name: a-mirthful
+
+networks:
+  mynet:
+    external:
+      name: mynet

@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  mirthfulfront:
+    image: registry.cn-beijing.aliyuncs.com/crucialize/mirthful-front:latest
+    networks:
+      - mynet
+    ports:
+      - "80:80"
+    container_name: a-mirthfulfront
+    restart: always
+
+networks:
+  mynet:
+    external:
+      name: mynet
